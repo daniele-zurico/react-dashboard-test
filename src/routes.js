@@ -1,6 +1,6 @@
 import React from 'react';
-import Test from './views/Test/test';
-import Schedule from './views/Schedule/schedule';
+import { Test } from './views/Test/test';
+import { Schedule } from './views/Schedule/schedule';
 export default [
   {
     path: '/',

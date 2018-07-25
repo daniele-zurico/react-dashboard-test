@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -11,19 +11,23 @@ import { styles } from './dashboard.style';
 import { SideBar, MenuBar, Content } from '../../components';
 import routes from '../../routes';
 
-const _Dashboard = ({ classes, theme, openSidebar, closeSidebar, sideBar }) => {
-  return (
-    <div className={classes.root}>
-      <MenuBar open={sideBar} openSidebar={openSidebar} />
-      <SideBar
-        open={sideBar}
-        closeSidebar={closeSidebar}
-        items={mailFolderListItems}
-      />
-      <Content routes={routes} />
-    </div>
-  );
-};
+class _Dashboard extends Component {
+  render() {
+    const { classes, openSidebar, closeSidebar } = this.props;
+
+    return (
+      <div className={classes.root}>
+        <MenuBar open={this.props.sideBar} openSidebar={openSidebar} />
+        <SideBar
+          open={this.props.sideBar}
+          closeSidebar={closeSidebar}
+          items={mailFolderListItems}
+        />
+        <Content routes={routes} />
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   sideBar: state.layout.sideBar,
@@ -36,4 +40,4 @@ const Dashboard = withRouter(
   )(withStyles(styles, { withTheme: true })(_Dashboard))
 );
 
-export default Dashboard;
+export { Dashboard };

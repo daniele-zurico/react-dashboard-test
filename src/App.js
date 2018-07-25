@@ -6,7 +6,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import rootReducer from './store/reducers';
-import Dashboard from './views/Dashboard/Dashboard';
+import { Dashboard } from './views/Dashboard/Dashboard';
 
 const midleware = [];
 
