@@ -11,38 +11,16 @@ import withMobileDialog from '@material-ui/core/withMobileDialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Typography from '@material-ui/core/Typography';
+import * as PropTypes from "prop-types";
+
+
+import {Tags, Row, MARGIN} from "../../components";
+
 const Footer = styled.div`
   position: absolute;
   bottom: 10px;
   right: 10px;
   display: flex;
-`;
-
-const Tags = styled.div`
-  display: flex;
-  flex-direction: coloumn;
-  margin-top: 30px;
-  span:first-of-type {
-    margin-left: 10px;
-  }
-`;
-const Tag = styled.span`
-  margin-right: 5px;
-  width: 23px;
-  height: 23px;
-  border-radius: 13px;
-  background-color: ${props => {
-    if (props.pink) {
-      return '#e91e63';
-    } else if (props.cyan) {
-      return '#2196f3';
-    } else if (props.green) {
-      return '#8bc34a';
-    } else if (props.orange) {
-      return '#ff5722';
-    }
-  }};
 `;
 
 const Label = styled.label`
@@ -56,6 +34,63 @@ const Label = styled.label`
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
+
+
+
+class CategoriesDialog extends Component {
+  render() {
+    return (
+      <Dialog
+        fullScreen={this.props.fullScreen}
+        open={this.props.open}
+        onClose={this.props.closeDialog}
+        TransitionComponent={Transition}
+      >
+        <DialogTitle id="responsive-dialog-title">
+          {"Add a new Category to better organise your expenses"}
+        </DialogTitle>
+        <DialogContent>
+          <form noValidate autoComplete="off">
+            <TextField
+              required
+              fullWidth
+              id="required"
+              label="Category name"
+              margin="normal"
+            />
+            <Row marginTop={MARGIN.TOP}>
+              <div>Tags:</div>
+              <Tags/>
+            </Row>
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            color="secondary"
+            aria-label="Close"
+            onClick={this.props.closeDialog}
+          >
+            <CloseIcon/> Cancel
+          </Button>
+          <Button
+            color="primary"
+            aria-label="Close"
+            onClick={this.props.closeDialog}
+          >
+            <CheckIcon/> Confirm
+          </Button>
+        </DialogActions>
+      </Dialog>
+    );
+  }
+}
+
+CategoriesDialog.propTypes = {
+  fullScreen: PropTypes.bool,
+  open: PropTypes.any,
+  closeDialog: PropTypes.func
+};
+
 class _Categories extends Component {
   constructor(props) {
     super(props);
@@ -76,50 +111,7 @@ class _Categories extends Component {
   render() {
     return (
       <div>
-        <Dialog
-          fullScreen={this.props.fullScreen}
-          open={this.state.open}
-          onClose={this.closeDialog}
-          TransitionComponent={Transition}
-        >
-          <DialogTitle id="responsive-dialog-title">
-            {'Add a new Category to better organise your expenses'}
-          </DialogTitle>
-          <DialogContent>
-            <form noValidate autoComplete="off">
-              <TextField
-                required
-                fullWidth
-                id="required"
-                label="Category name"
-                margin="normal"
-              />
-              <Tags>
-                <Label>Tag:</Label>
-                <Tag pink />
-                <Tag cyan />
-                <Tag green />
-                <Tag orange />
-              </Tags>
-            </form>
-          </DialogContent>
-          <DialogActions>
-            <Button
-              color="secondary"
-              aria-label="Close"
-              onClick={this.closeDialog}
-            >
-              <CloseIcon /> Cancel
-            </Button>
-            <Button
-              color="primary"
-              aria-label="Close"
-              onClick={this.closeDialog}
-            >
-              <CheckIcon /> Confirm
-            </Button>
-          </DialogActions>
-        </Dialog>
+        <CategoriesDialog fullScreen={this.props.fullScreen} open={this.state.open} closeDialog={this.closeDialog}/>
 
         <Footer>
           <Button
@@ -128,7 +120,7 @@ class _Categories extends Component {
             aria-label="Add"
             onClick={this.openDialog}
           >
-            <AddIcon />
+            <AddIcon/>
           </Button>
         </Footer>
       </div>

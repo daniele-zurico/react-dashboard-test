@@ -32,7 +32,7 @@ const Dashboard = withRouter(
   connect(
     mapStateToProps,
     { openSidebar, closeSidebar }
-  )(withStyles(styles, { withTheme: true })(_Dashboard))
+  )(withStyles(styles)(_Dashboard))
 );
 
 export { Dashboard };
