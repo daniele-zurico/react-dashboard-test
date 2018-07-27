@@ -8,9 +8,10 @@ import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './SideBar.style';
+import { mailFolderListItems } from './tileData';
 class DrawerBar extends Component {
   render() {
-    const { classes, open, closeSidebar, items, theme } = this.props;
+    const { classes, open, closeSidebar, theme } = this.props;
     return (
       <Drawer
         variant="permanent"
@@ -32,7 +33,7 @@ class DrawerBar extends Component {
           </IconButton>
         </div>
         <Divider />
-        <List>{items}</List>
+        <List>{mailFolderListItems}</List>
       </Drawer>
     );
   }

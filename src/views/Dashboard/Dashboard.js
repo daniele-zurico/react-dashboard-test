@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { openSidebar, closeSidebar } from '../../store/actions/layout.actions';
 import { withRouter } from 'react-router-dom';
 
-import { mailFolderListItems } from './tileData';
 import { styles } from './dashboard.style';
 import { SideBar, MenuBar, Content } from '../../components';
 import routes from '../../routes';
@@ -18,11 +17,7 @@ class _Dashboard extends Component {
     return (
       <div className={classes.root}>
         <MenuBar open={this.props.sideBar} openSidebar={openSidebar} />
-        <SideBar
-          open={this.props.sideBar}
-          closeSidebar={closeSidebar}
-          items={mailFolderListItems}
-        />
+        <SideBar open={this.props.sideBar} closeSidebar={closeSidebar} />
         <Content routes={routes} />
       </div>
     );
