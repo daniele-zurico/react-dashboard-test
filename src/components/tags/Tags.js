@@ -1,7 +1,6 @@
 import {Component} from "react";
 import React from "react";
 import {TagsContainer, Tag} from './Tags.style';
-import deepFreeze from 'deep-freeze';
 
 class Tags extends Component {
   constructor(props) {
@@ -9,7 +8,7 @@ class Tags extends Component {
     this.state = {
       tags: [
         {id: 1, color: 'pink', selected: false},
-        {id: 2, color: 'cyan', selected: true},
+        {id: 2, color: 'cyan', selected: false},
         {id: 3, color: 'green', selected: false},
         {id: 4, color: 'orange', selected: false},
       ]
@@ -17,11 +16,12 @@ class Tags extends Component {
   }
 
   // toggle the selected tag
-  toggleSelected = id => {
+  toggleSelected = evt => {
+    const id = parseInt(evt.target.id);
+    // dispatch to the parent
+    this.props.selected(id);
     this.setState((prevState) => {
-      deepFreeze(prevState);
       return {
-        ...prevState,
         tags: prevState.tags.map((tag) => ({
           ...tag,
           selected: id === tag.id
@@ -36,9 +36,10 @@ class Tags extends Component {
     const tagsEl = tags.map(({id, color, selected}) =>
       <Tag
         key={id}
+        id={id}
         color={color}
         selected={selected}
-        onClick={() => this.toggleSelected(id)}/>);
+        onClick={this.toggleSelected}/>);
     return (
       <TagsContainer>
         {tagsEl}
