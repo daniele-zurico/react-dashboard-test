@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.4.0",
     "@material-ui/icons": "^1.1.0",
+    "npm": "^6.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
@@ -21,6 +22,19 @@
     "flow": "flow"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.76.0"
+  },
+  "eslintConfig": {
+    "rules": {
+      "linebreak-style": [
+        "error",
+        "windows"
+      ]
+    }
   }
 }

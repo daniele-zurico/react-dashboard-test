@@ -15,27 +15,27 @@ class Tags extends Component {
       ]
     };
   }
-  toggleSelected = _id => {
+  toggleSelected = id => {
+    //import deepFreeze from 'deep-freeze';
 
-    // this.setState(state => ({
-    //   ...state,
-    //   tags: state.tags.map(tag => ({
-    //     ...tag,
-    //     selected: tag.id === _id,
-    //   })),
-    // }), () => console.log(this.state));
-
-    // It will create 2 variables;
-    // tags which will be the value of state.tags,
-    // rest which will be the value of state WITHOUT the tags key.
-    this.setState(({ tags, ...rest }) => ({
-      ...rest,
-      tags: tags.map(({ id, selected, ...rest }) => ({
-        ...rest,
-        id,
-        selected: id === _id,
-      })),
-    }), () => console.log(this.state));
+// this.setState(prevState => {
+//   deepFreeze(prevState);
+//   prevState.arr.splice(1, 2);
+//   return prevState;
+// });
+    // this.setState((prevState) =>
+    //   prevState.tags.map(tag =>
+    //     tag.id === id ? tag.selected = true : tag.selected = false
+    //   )
+    // );
+    this.setState((prevState) => ({
+      ...prevState,
+      tags: prevState.tags.map((tag) => ({
+        ...tag,
+        selected: id === tag.id
+      }))
+      })
+    );
   };
 
   render() {
