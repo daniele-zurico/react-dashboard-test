@@ -1,7 +1,7 @@
-import { Component } from "react";
+import {Component} from "react";
 import React from "react";
-import { TagsContainer, Tag } from './Tags.style';
-
+import {TagsContainer, Tag} from './Tags.style';
+import deepFreeze from 'deep-freeze';
 
 class Tags extends Component {
   constructor(props) {
@@ -15,32 +15,25 @@ class Tags extends Component {
       ]
     };
   }
-  toggleSelected = id => {
-    //import deepFreeze from 'deep-freeze';
 
-// this.setState(prevState => {
-//   deepFreeze(prevState);
-//   prevState.arr.splice(1, 2);
-//   return prevState;
-// });
-    // this.setState((prevState) =>
-    //   prevState.tags.map(tag =>
-    //     tag.id === id ? tag.selected = true : tag.selected = false
-    //   )
-    // );
-    this.setState((prevState) => ({
-      ...prevState,
-      tags: prevState.tags.map((tag) => ({
-        ...tag,
-        selected: id === tag.id
-      }))
-      })
+  // toggle the selected tag
+  toggleSelected = id => {
+    this.setState((prevState) => {
+      deepFreeze(prevState);
+      return {
+        ...prevState,
+        tags: prevState.tags.map((tag) => ({
+          ...tag,
+          selected: id === tag.id
+        }))
+      }
+    }
     );
   };
 
   render() {
     const {tags} = this.state;
-    const tagsEl = tags.map(({id,color, selected}) =>
+    const tagsEl = tags.map(({id, color, selected}) =>
       <Tag
         key={id}
         color={color}
