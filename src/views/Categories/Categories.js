@@ -11,8 +11,8 @@ class Categories extends Component {
     super(props);
     this.state = {
       openDialog: false,
-      categoryName: 'category',
-      tagId: '',
+      categoryName: '',
+      tagId: -1,
       tags: [
         {id: 1, color: '#e91e63', selected: false},
         {id: 2, color: '#2196f3', selected: false},
@@ -22,31 +22,31 @@ class Categories extends Component {
     };
   }
 
-  handleOpenDialog = () => {
-    this.setState({openDialog: true});
-  };
-
-  handleCloseDialog = () => {
-    this.setState({openDialog: false});
+  handleToggleDialog = () => {
+    this.setState((prevState) => ({
+      openDialog: !prevState.openDialog
+    }));
   };
 
   handleConfirmDialog = () => {
-    // time to store the state in the graphQL db
-    console.log(this.state);
-    this.setState({openDialog: false});
+    const { categoryName, tagId } = this.state;
+    const payload = {
+      categoryName,
+      tagId
+    };
+    // send to graphQL
+    console.log(payload);
+    this.handleToggleDialog();
   };
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
   };
 
-  handleSelectedTag = tagId => {
-    this.setState({tagId});
-  };
-
   handleSelectedTag = evt => {
     const id = parseInt(evt.target.id, 10);
     this.setState((prevState) => ({
+      tagId: id,
       tags: prevState.tags.map((tag) => ({
         ...tag,
         selected: id === tag.id
@@ -60,7 +60,8 @@ class Categories extends Component {
         <ResponsiveDialog
           open={this.state.openDialog}
           onConfirm={this.handleConfirmDialog}
-          onCancel={this.handleCloseDialog}>
+          onCancel={this.handleToggleDialog}
+          disabled={this.state.tagId === -1 || this.state.categoryName === ''}>
           <form noValidate autoComplete="off">
             <TextField
               required
@@ -81,7 +82,7 @@ class Categories extends Component {
             variant="fab"
             color="primary"
             aria-label="Add"
-            onClick={() => this.handleOpenDialog()}>
+            onClick={this.handleToggleDialog}>
             <AddIcon/>
           </Button>
         </Footer>

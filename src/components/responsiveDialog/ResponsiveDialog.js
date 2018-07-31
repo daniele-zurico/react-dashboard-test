@@ -12,7 +12,7 @@ import Slide from "@material-ui/core/Slide";
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
-const _ResponsiveDialog  = ({fullScreen, open, children, onCancel, onConfirm}) => {
+const _ResponsiveDialog  = ({fullScreen, open, children, onCancel, onConfirm, disabled}) => {
 
     return (
       <Dialog
@@ -37,6 +37,7 @@ const _ResponsiveDialog  = ({fullScreen, open, children, onCancel, onConfirm}) =
           <Button
             color="primary"
             aria-label="Close"
+            disabled={disabled}
             onClick={onConfirm}
           >
             <CheckIcon/> Confirm

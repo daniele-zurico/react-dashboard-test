@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="399eebe9-05e6-4a3c-9d25-44f0c3e88f92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/content/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/content/Content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menuBar/MenuBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menuBar/MenuBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/responsiveDialog/ResponsiveDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/responsiveDialog/ResponsiveDialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sideBar/SideBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sideBar/SideBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tags/Tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tags/Tags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tags/Tags.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tags/Tags.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Categories/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Categories/Categories.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -46,14 +41,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="4376" />
+          <entry key="js" value="4911" />
           <entry key="json" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="4376" />
+          <entry key="JavaScript" value="4911" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -72,8 +67,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/responsiveDialog/ResponsiveDialog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            <state relative-caret-position="50">
+              <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,8 +136,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/Categories/Categories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="36" selection-end-column="4" />
+            <state relative-caret-position="336">
+              <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -195,10 +193,10 @@
         <option value="$PROJECT_DIR$/src/views/Categories/categories.style.js" />
         <option value="$PROJECT_DIR$/src/components/tags/Tags.style.js" />
         <option value="$PROJECT_DIR$/src/components/tags/Tags.js" />
-        <option value="$PROJECT_DIR$/src/components/responsiveDialog/ResponsiveDialog.js" />
         <option value="$PROJECT_DIR$/src/components/menuBar/MenuBar.js" />
         <option value="$PROJECT_DIR$/src/components/content/Content.js" />
         <option value="$PROJECT_DIR$/src/components/sideBar/SideBar.js" />
+        <option value="$PROJECT_DIR$/src/components/responsiveDialog/ResponsiveDialog.js" />
         <option value="$PROJECT_DIR$/src/views/Categories/Categories.js" />
       </list>
     </option>
@@ -226,10 +224,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="891" />
-    <option name="y" value="23" />
+    <option name="x" value="739" />
+    <option name="y" value="112" />
     <option name="width" value="1668" />
-    <option name="height" value="977" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -346,15 +344,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532695393211</updated>
-      <workItem from="1532695394985" duration="30143000" />
+      <workItem from="1532695394985" duration="35248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30143000" />
+    <option name="totallyTimeSpent" value="35248000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="891" y="23" width="1668" height="977" extended-state="0" />
+    <frame x="739" y="112" width="1668" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
@@ -365,7 +363,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32988507" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.37272727" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32988507" />
@@ -514,13 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/responsiveDialog/ResponsiveDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/tags/Tags.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -538,10 +529,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/responsiveDialog/ResponsiveDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Categories/Categories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="36" selection-end-column="4" />
+        <state relative-caret-position="336">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
