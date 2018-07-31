@@ -55,13 +55,15 @@ class Categories extends Component {
   };
 
   render() {
+    const {openDialog, tagId, categoryName, tags} = this.state;
+    const formDisabled = tagId === -1 || categoryName === '';
     return (
       <div>
         <ResponsiveDialog
-          open={this.state.openDialog}
+          open={openDialog}
           onConfirm={this.handleConfirmDialog}
           onCancel={this.handleToggleDialog}
-          disabled={this.state.tagId === -1 || this.state.categoryName === ''}>
+          disabled={formDisabled}>
           <form noValidate autoComplete="off">
             <TextField
               required
@@ -69,11 +71,11 @@ class Categories extends Component {
               id="categoryName"
               label="Category name"
               margin="normal"
-              value = {this.state.categoryName}
+              value = {categoryName}
               onChange={this.handleChange('categoryName')}/>
             <Row marginTop={MARGIN.TOP}>
               <div>Tags:</div>
-              <Tags tags={this.state.tags} onSelected={this.handleSelectedTag}/>
+              <Tags tags={tags} onSelected={this.handleSelectedTag}/>
             </Row>
           </form>
         </ResponsiveDialog>
