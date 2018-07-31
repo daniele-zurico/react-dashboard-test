@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,9 +8,7 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './MenuBar.style';
 
-class TopBar extends Component {
-  render() {
-    const { classes, open, openSidebar } = this.props;
+const TopBar  = ({ classes, open, openSidebar }) => {
     return (
       <AppBar
         position="absolute"
@@ -31,8 +29,7 @@ class TopBar extends Component {
         </Toolbar>
       </AppBar>
     );
-  }
-}
+};
 
 const MenuBar = withStyles(styles, { withTheme: true })(TopBar);
 export { MenuBar };

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import Dialog from "@material-ui/core/Dialog";
@@ -12,41 +12,39 @@ import Slide from "@material-ui/core/Slide";
 function Transition(props) {
   return <Slide direction="up" {...props} />;
 }
-class _ResponsiveDialog extends Component {
+const _ResponsiveDialog  = ({fullScreen, open, children, onCancel, onConfirm}) => {
 
-  render() {
     return (
       <Dialog
-        fullScreen={this.props.fullScreen}
-        open={this.props.open}
+        fullScreen={fullScreen}
+        open={open}
         TransitionComponent={Transition}
       >
         <DialogTitle id="responsive-dialog-title">
           {"Add a new Category to better organise your expenses"}
         </DialogTitle>
         <DialogContent>
-          {this.props.children}
+          {children}
         </DialogContent>
         <DialogActions>
           <Button
             color="secondary"
             aria-label="Close"
-            onClick={this.props.cancel}
+            onClick={onCancel}
           >
             <CloseIcon/> Cancel
           </Button>
           <Button
             color="primary"
             aria-label="Close"
-            onClick={this.props.confirm}
+            onClick={onConfirm}
           >
             <CheckIcon/> Confirm
           </Button>
         </DialogActions>
       </Dialog>
     );
-  }
-}
+};
 
 const ResponsiveDialog = withMobileDialog()(_ResponsiveDialog);
 

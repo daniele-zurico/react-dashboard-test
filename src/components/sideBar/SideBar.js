@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import classNames from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
@@ -9,9 +9,8 @@ import List from '@material-ui/core/List';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './SideBar.style';
 import { mailFolderListItems } from './tileData';
-class DrawerBar extends Component {
-  render() {
-    const { classes, open, closeSidebar, theme } = this.props;
+const DrawerBar  = ({ classes, open, closeSidebar, theme }) => {
+
     return (
       <Drawer
         variant="permanent"
@@ -36,8 +35,7 @@ class DrawerBar extends Component {
         <List>{mailFolderListItems}</List>
       </Drawer>
     );
-  }
-}
+};
 
 const SideBar = withStyles(styles, { withTheme: true })(DrawerBar);
 export { SideBar };

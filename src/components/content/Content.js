@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './Content.style';
 import { Route, Switch } from 'react-router-dom';
 
-class Main extends Component {
-  render() {
-    const { classes, routes } = this.props;
+const Main = ({ classes, routes }) =>  {
+
     return (
       <main className={classes.content}>
         <div className={classes.toolbar} />
@@ -21,7 +20,6 @@ class Main extends Component {
         </Switch>
       </main>
     );
-  }
 }
 
 const Content = withStyles(styles, { withTheme: true })(Main);

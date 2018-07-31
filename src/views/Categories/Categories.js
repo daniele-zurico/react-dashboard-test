@@ -12,7 +12,13 @@ class Categories extends Component {
     this.state = {
       openDialog: false,
       categoryName: 'category',
-      tagId: ''
+      tagId: '',
+      tags: [
+        {id: 1, color: '#e91e63', selected: false},
+        {id: 2, color: '#2196f3', selected: false},
+        {id: 3, color: '#8bc34a', selected: false},
+        {id: 4, color: '#ff5722', selected: false},
+      ]
     };
   }
 
@@ -21,13 +27,11 @@ class Categories extends Component {
   };
 
   handleCloseDialog = () => {
-    debugger
     this.setState({openDialog: false});
   };
 
   handleConfirmDialog = () => {
     // time to store the state in the graphQL db
-    debugger
     console.log(this.state);
     this.setState({openDialog: false});
   };
@@ -40,14 +44,23 @@ class Categories extends Component {
     this.setState({tagId});
   };
 
+  handleSelectedTag = evt => {
+    const id = parseInt(evt.target.id, 10);
+    this.setState((prevState) => ({
+      tags: prevState.tags.map((tag) => ({
+        ...tag,
+        selected: id === tag.id
+      }))
+    }));
+  };
 
   render() {
     return (
       <div>
         <ResponsiveDialog
           open={this.state.openDialog}
-          confirm={this.handleConfirmDialog}
-          cancel={this.handleCloseDialog}>
+          onConfirm={this.handleConfirmDialog}
+          onCancel={this.handleCloseDialog}>
           <form noValidate autoComplete="off">
             <TextField
               required
@@ -59,7 +72,7 @@ class Categories extends Component {
               onChange={this.handleChange('categoryName')}/>
             <Row marginTop={MARGIN.TOP}>
               <div>Tags:</div>
-              <Tags selected={this.handleSelectedTag}/>
+              <Tags tags={this.state.tags} onSelected={this.handleSelectedTag}/>
             </Row>
           </form>
         </ResponsiveDialog>
