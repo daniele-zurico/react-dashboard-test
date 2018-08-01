@@ -39,26 +39,4 @@ describe('<Tags/>', () => {
     span.simulate('click');
     expect(data.doneChange).toHaveBeenCalledTimes();
   });
-  // These tests are probably not required I leave here for reference
-  // maybe to remove?
-  it('should contains 4 elements', () => {
-    const wrapper = mount(<Tags tags={data.tags} />);
-    expect(wrapper.find('span').length).toBe(4);
-  });
-
-  it('should contains 3 properties', () => {
-    const wrapper = mount(<Tags tags={data.tags} />);
-    const firstSpan = wrapper.find('span').at(0);
-    expect(firstSpan.prop('id')).toBeDefined();
-    expect(firstSpan.prop('color')).toBeDefined();
-    expect(firstSpan.prop('selected')).toBeDefined();
-  });
-
-  it('should contains the passed value for each property', () => {
-    const wrapper = mount(<Tags tags={data.tags} />);
-    const firstSpan = wrapper.find('span').at(0);
-    expect(firstSpan.prop('id')).toBe(1);
-    expect(firstSpan.prop('color')).toBe('#e91e63');
-    expect(firstSpan.prop('selected')).toBe(false);
-  });
 });
