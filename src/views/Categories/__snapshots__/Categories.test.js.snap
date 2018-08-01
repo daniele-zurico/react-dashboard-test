@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Categories/> should match the snapshot 1`] = `
+<div>
+  <WithTheme(WithWidth(WithMobileDialog))
+    disabled={true}
+    onCancel={[Function]}
+    onConfirm={[Function]}
+    open={false}
+  >
+    <form
+      autoComplete="off"
+      noValidate={true}
+    >
+      <TextField
+        fullWidth={true}
+        id="categoryName"
+        label="Category name"
+        margin="normal"
+        onChange={[Function]}
+        required={true}
+        select={false}
+        value=""
+      />
+      <Row
+        marginTop="10px"
+      >
+        <div>
+          Tags:
+        </div>
+        <Tags
+          onSelected={[Function]}
+          tags={
+            Array [
+              Object {
+                "color": "#e91e63",
+                "id": 1,
+                "selected": false,
+              },
+              Object {
+                "color": "#2196f3",
+                "id": 2,
+                "selected": false,
+              },
+              Object {
+                "color": "#8bc34a",
+                "id": 3,
+                "selected": false,
+              },
+              Object {
+                "color": "#ff5722",
+                "id": 4,
+                "selected": false,
+              },
+            ]
+          }
+        />
+      </Row>
+    </form>
+  </WithTheme(WithWidth(WithMobileDialog))>
+  <styled.div>
+    <WithStyles(Button)
+      aria-label="Add"
+      color="primary"
+      onClick={[Function]}
+      variant="fab"
+    >
+      <pure(Add) />
+    </WithStyles(Button)>
+  </styled.div>
+</div>
+`;
